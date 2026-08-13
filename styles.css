@@ -1,0 +1,1005 @@
+:root {
+  --navy: #092b57;
+  --navy-dark: #031a36;
+  --blue: #0d5da8;
+  --blue-dark: #08447b;
+  --gold: #e21c2a;
+  --cream: #f5f7fa;
+  --white: #ffffff;
+  --text: #172b45;
+  --muted: #66758a;
+  --border: #dce3eb;
+  --shadow: 0 18px 45px rgba(3, 26, 54, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 16px;
+  z-index: 100;
+  padding: 10px 16px;
+  color: var(--white);
+  background: var(--navy);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(217, 226, 236, 0.8);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.header-content {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: auto;
+  height: 169px;
+  display: block;
+  object-fit: contain;
+}
+
+.home-page .brand-logo {
+  height: 294px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.main-nav a {
+  color: var(--text);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--gold);
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 2px solid var(--blue);
+  border-radius: 6px;
+  color: var(--white);
+  background: var(--blue);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover,
+.button:focus {
+  border-color: var(--blue-dark);
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.button-small {
+  padding: 10px 16px;
+  font-size: 0.88rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 173px;
+  display: grid;
+  align-items: center;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 30%, rgba(13, 93, 168, 0.35), transparent 32%),
+    linear-gradient(125deg, var(--navy-dark) 0%, var(--navy) 62%, #0b4d8a 100%);
+}
+
+.hero:not(.location-hero)::before {
+  position: absolute;
+  right: 3%;
+  bottom: -38%;
+  width: 500px;
+  height: 500px;
+  background: url("images/buffalo-storage-group-favicon-source.png") center / contain no-repeat;
+  content: "";
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero:not(.location-hero) .hero-content {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.hero:not(.location-hero) h1 {
+  max-width: 720px;
+  margin-bottom: 6px;
+  font-size: clamp(1.6rem, 2.4vw, 1.9rem);
+  letter-spacing: -0.035em;
+}
+
+.hero:not(.location-hero) .hero-copy {
+  max-width: 700px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.hero:not(.location-hero) .eyebrow {
+  margin-bottom: 5px;
+}
+
+.hero:not(.location-hero) .button {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-color: var(--gold);
+  background: var(--gold);
+}
+
+.hero:not(.location-hero) .button:hover,
+.hero:not(.location-hero) .button:focus {
+  border-color: #b8111d;
+  background: #b8111d;
+}
+
+.hero:not(.location-hero) .trust-list {
+  display: none;
+}
+
+.hero::after {
+  position: absolute;
+  right: -140px;
+  bottom: -250px;
+  width: 540px;
+  height: 540px;
+  border: 80px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  content: "";
+}
+
+.location-hero {
+  min-height: 500px;
+}
+
+.location-hero h1 {
+  max-width: 900px;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+}
+
+.breadcrumbs {
+  margin-bottom: 28px;
+  color: #bad4e5;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+  color: var(--white);
+}
+
+.location-detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.location-photo-large {
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  border-radius: 14px;
+  color: #d7e5ef;
+  background:
+    linear-gradient(135deg, rgba(20, 121, 184, 0.22), transparent),
+    var(--navy);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.location-detail-content {
+  padding-top: 12px;
+}
+
+.location-detail-content > p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.facility-facts {
+  margin: 34px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facility-facts li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.facility-facts strong {
+  color: var(--navy);
+}
+
+.facility-facts span {
+  color: var(--muted);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-actions .button-outline {
+  background: var(--white);
+}
+
+.detail-actions .button-outline:hover,
+.detail-actions .button-outline:focus {
+  background: var(--blue-dark);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: var(--gold);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 24px;
+  color: var(--white);
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.hero-copy {
+  max-width: 650px;
+  margin-bottom: 30px;
+  color: #d9e8f2;
+  font-size: 1.25rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.text-link {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover,
+.text-link:focus {
+  text-decoration: underline;
+}
+
+.trust-list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 64px;
+  color: #d9e8f2;
+  font-size: 0.95rem;
+}
+
+.trust-list span::before {
+  margin-right: 9px;
+  color: var(--gold);
+  content: "✓";
+  font-weight: 800;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+#locations {
+  padding-top: 12px;
+  padding-bottom: 64px;
+}
+
+#locations .section-heading {
+  margin-bottom: 12px;
+}
+
+#locations .section-heading h2 {
+  margin-bottom: 5px;
+  font-size: clamp(1.55rem, 2.2vw, 1.9rem);
+}
+
+#locations .section-heading > p:last-child {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+#locations .section-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.section-heading > p:last-child,
+.section-copy {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.location-grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.storage-card {
+  min-height: 280px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.location-card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.card-stretched-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.location-card:hover,
+.location-card:focus-within {
+  border-color: #b7c7d8;
+  box-shadow: var(--shadow);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.facility-logo {
+  position: relative;
+  z-index: 2;
+  height: 156px;
+  min-height: 156px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  text-decoration: none;
+  transition: filter 160ms ease;
+}
+
+.facility-logo img {
+  width: auto;
+  max-width: 96%;
+  height: 126px;
+  display: block;
+  object-fit: contain;
+}
+
+.facility-logo:hover,
+.facility-logo:focus {
+  filter: brightness(1.18);
+}
+
+.facility-logo-number {
+  font-size: 2.65rem;
+  letter-spacing: -0.05em;
+}
+
+.facility-logo-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+}
+
+.facility-logo-garages {
+  background: var(--white);
+}
+
+.facility-logo-colvin {
+  background: var(--white);
+}
+
+.facility-logo-amherst {
+  background: var(--white);
+}
+
+.facility-logo-epic {
+  background: var(--white);
+}
+
+.facility-logo-epic img {
+  transform: scale(0.5);
+}
+
+.epic-wordmark {
+  font-size: 2.5rem;
+  font-style: italic;
+  letter-spacing: -0.03em;
+}
+
+.facility-logo-nt {
+  background: var(--white);
+}
+
+.location-card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.location-card-content h3 {
+  margin-bottom: 7px;
+  font-size: 1.15rem;
+}
+
+.facility-type {
+  min-height: 24px;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.location-address {
+  min-height: 52px;
+  margin-bottom: 0;
+  color: var(--navy) !important;
+  font-weight: 700;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-title-row h3 {
+  margin-bottom: 10px;
+}
+
+.status-badge {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #222222;
+  background: #e3e3e3;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location-image-placeholder {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: #d7e5ef;
+  background:
+    linear-gradient(135deg, rgba(20, 121, 184, 0.2), transparent),
+    var(--navy);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.storage-card p:not(.card-label):not(.price) {
+  color: var(--muted);
+}
+
+.featured-card {
+  border-top: 5px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+
+.card-label {
+  margin-bottom: 18px;
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.location-button {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+.location-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.location-logo-button {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--white);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.location-logo-button img {
+  width: auto;
+  max-width: 92%;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+}
+
+.location-logo-button:hover,
+.location-logo-button:focus {
+  border-color: #9eb3c8;
+  box-shadow: 0 6px 16px rgba(3, 26, 54, 0.14);
+  transform: translateY(-1px);
+}
+
+.epic-location-card .location-logo-button img {
+  transform: scale(0.5);
+}
+
+.button-outline {
+  color: var(--blue);
+  background: transparent;
+}
+
+.button-outline:hover,
+.button-outline:focus {
+  color: var(--white);
+}
+
+.facility-logo-garages + .location-card-content .location-button {
+  border-color: #303030;
+  background: #303030;
+}
+
+.facility-logo-garages + .location-card-content .location-button:hover,
+.facility-logo-garages + .location-card-content .location-button:focus {
+  border-color: #111111;
+  background: #111111;
+}
+
+.facility-logo-colvin + .location-card-content .location-button {
+  border-color: #28753f;
+  background: #28753f;
+}
+
+.facility-logo-colvin + .location-card-content .location-button:hover,
+.facility-logo-colvin + .location-card-content .location-button:focus {
+  border-color: #174f2a;
+  background: #174f2a;
+}
+
+.facility-logo-amherst + .location-card-content .location-button {
+  border-color: #0b4d8a;
+  background: #0b4d8a;
+}
+
+.facility-logo-amherst + .location-card-content .location-button:hover,
+.facility-logo-amherst + .location-card-content .location-button:focus {
+  border-color: #063562;
+  background: #063562;
+}
+
+.facility-logo-epic + .location-card-content .location-button {
+  border-color: #0d5da8;
+  background: #0d5da8;
+}
+
+.facility-logo-epic + .location-card-content .location-button:hover,
+.facility-logo-epic + .location-card-content .location-button:focus {
+  border-color: #082f5f;
+  background: #082f5f;
+}
+
+.facility-logo-nt + .location-card-content .location-button {
+  border-color: #3d3d3d;
+  background: #3d3d3d;
+}
+
+.facility-logo-nt + .location-card-content .location-button:hover,
+.facility-logo-nt + .location-card-content .location-button:focus {
+  border-color: #171717;
+  background: #171717;
+}
+
+.price {
+  margin: 28px 0 0;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.placeholder-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.section-tinted {
+  background: var(--cream);
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.benefit-list article {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid #d8d3c8;
+}
+
+.about-panel {
+  padding: 42px;
+  border-left: 5px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.about-panel p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.about-quote {
+  margin-bottom: 24px;
+  color: var(--navy);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.benefit-list article:first-child {
+  padding-top: 0;
+}
+
+.benefit-list article:last-child {
+  border-bottom: 0;
+}
+
+.benefit-list p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.benefit-number {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.contact-section {
+  padding: 76px 0;
+  color: var(--white);
+  background: var(--blue);
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.contact-content h2 {
+  max-width: 650px;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+
+.contact-content p {
+  margin-bottom: 0;
+  color: #dcedf8;
+}
+
+.light-eyebrow {
+  color: var(--white) !important;
+}
+
+.contact-actions {
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.button-light {
+  border-color: var(--white);
+  color: var(--blue);
+  background: var(--white);
+}
+
+.button-light:hover,
+.button-light:focus {
+  border-color: var(--cream);
+  color: var(--navy);
+  background: var(--cream);
+}
+
+.contact-email {
+  color: var(--white);
+  text-align: center;
+}
+
+.site-footer {
+  padding: 38px 0;
+  color: #b8cad8;
+  background: var(--navy-dark);
+  font-size: 0.88rem;
+}
+
+.footer-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.footer-content p {
+  margin-bottom: 0;
+}
+
+.footer-brand {
+  margin-bottom: 4px !important;
+  color: var(--white);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .main-nav {
+    display: none;
+  }
+
+  .card-grid,
+  .split-layout,
+  .location-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split-layout {
+    gap: 52px;
+  }
+
+  .location-detail-grid {
+    gap: 42px;
+  }
+
+  .contact-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-actions {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .brand-logo {
+    height: 140px;
+  }
+
+  .home-page .brand-logo {
+    height: 244px;
+  }
+
+  .header-content {
+    min-height: 68px;
+    gap: 10px;
+  }
+
+  .header-content .button-small {
+    padding: 9px 10px;
+    font-size: 0.74rem;
+  }
+
+  .hero:not(.location-hero) {
+    min-height: 173px;
+  }
+
+  .hero-content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .hero:not(.location-hero) .hero-content {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .location-hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4.2rem);
+  }
+
+  .location-hero .trust-list {
+    gap: 12px 24px;
+    margin-top: 46px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .storage-card {
+    min-height: 0;
+  }
+
+  .location-photo-large {
+    min-height: 300px;
+  }
+
+  .facility-facts li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-actions {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button {
+    transition: none;
+  }
+}
