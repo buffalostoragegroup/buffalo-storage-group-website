@@ -537,7 +537,36 @@ h3 {
 }
 
 .facility-logo-nt {
+  border-bottom-color: #b8b8b8;
   background: var(--white);
+}
+
+.north-tonawanda-location-card {
+  border-color: #c7c7c7;
+}
+
+.north-tonawanda-location-card:hover,
+.north-tonawanda-location-card:focus-within {
+  border-color: #666666;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.north-tonawanda-location-card .location-card-content h3 {
+  color: #171717;
+}
+
+.north-tonawanda-location-card .location-address {
+  color: #3d3d3d !important;
+}
+
+.north-tonawanda-location-card .location-logo-button {
+  border-color: #b8b8b8;
+}
+
+.north-tonawanda-location-card .location-logo-button:hover,
+.north-tonawanda-location-card .location-logo-button:focus {
+  border-color: #3d3d3d;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
 .location-card-content {
