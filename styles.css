@@ -537,35 +537,47 @@ h3 {
 }
 
 .facility-logo-nt {
-  border-bottom-color: #b8b8b8;
+  border-bottom: 2px solid #3d3d3d;
   background: var(--white);
 }
 
 .north-tonawanda-location-card {
-  border-color: #c7c7c7;
+  border: 2px solid #2f2f2f;
+  background: #eeeeee;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .north-tonawanda-location-card:hover,
 .north-tonawanda-location-card:focus-within {
-  border-color: #666666;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+  border-color: #111111;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.north-tonawanda-location-card .location-card-content {
+  background: #eeeeee;
 }
 
 .north-tonawanda-location-card .location-card-content h3 {
-  color: #171717;
+  color: #111111;
+}
+
+.north-tonawanda-location-card .facility-type {
+  color: #595959 !important;
 }
 
 .north-tonawanda-location-card .location-address {
-  color: #3d3d3d !important;
+  color: #262626 !important;
 }
 
 .north-tonawanda-location-card .location-logo-button {
-  border-color: #b8b8b8;
+  border: 2px solid #555555;
+  background: #f8f8f8;
 }
 
 .north-tonawanda-location-card .location-logo-button:hover,
 .north-tonawanda-location-card .location-logo-button:focus {
-  border-color: #3d3d3d;
+  border-color: #111111;
+  background: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
