@@ -7,7 +7,8 @@
   <title>North Tonawanda Storage | Buffalo Storage Group</title>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=31">
+  <script src="navigation.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -18,7 +19,18 @@
         <img class="brand-logo" src="images/buffalo-storage-group-logo-patriotic.png" alt="Buffalo Storage Group">
       </a>
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html#locations">Locations</a>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-link" href="index.html#locations">Locations</a>
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="locations-menu" aria-label="Show Buffalo Storage Group locations">⌄</button>
+          <div class="nav-dropdown-menu" id="locations-menu">
+            <a href="https://www.534colvingarages.com/" target="_blank" rel="noopener">534 Colvin Garages</a>
+            <a href="https://www.colvinstorage.com/" target="_blank" rel="noopener">Colvin Storage</a>
+            <a href="https://www.amherstselfstorageny.com/" target="_blank" rel="noopener">Amherst Self Storage</a>
+            <a href="https://epicstoragewny.com/" target="_blank" rel="noopener">Epic Storage – Buffalo</a>
+            <a href="https://epicstoragewny.com/" target="_blank" rel="noopener">Epic Storage – Clarence Center</a>
+            <a href="https://www.northtonawandaselfstorage.com/" target="_blank" rel="noopener">North Tonawanda Self Storage</a>
+          </div>
+        </div>
         <a href="index.html#about">About Buffalo Storage Group</a>
         <a href="#contact">Contact</a>
       </nav>
