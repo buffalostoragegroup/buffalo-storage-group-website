@@ -1158,3 +1158,45 @@ h3 {
   .header-content:has(.storage-calculator-link) .brand,
   .header-content:has(.storage-calculator-link) .brand-logo { max-width: 100%; }
 }
+
+/* Homepage calculator callout, immediately below the header. */
+.home-page .calculator-callout {
+  padding: 32px 0;
+  color: var(--white);
+  background: var(--navy);
+  border-bottom: 4px solid var(--gold);
+}
+.home-page .calculator-callout-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.home-page .calculator-callout h2 {
+  margin: 0 0 10px;
+  color: var(--white);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
+}
+.home-page .calculator-callout p {
+  max-width: 650px;
+  margin: 0;
+  color: #dcedf8;
+}
+.home-page .calculator-callout-button {
+  flex-shrink: 0;
+  max-width: 100%;
+  font-size: 0.88rem;
+  padding: 16px 20px;
+}
+@media (max-width: 860px) {
+  .home-page .calculator-callout-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+@media (max-width: 580px) {
+  .home-page .calculator-callout { padding: 24px 0; }
+  .home-page .calculator-callout-button { width: 100%; }
+}
