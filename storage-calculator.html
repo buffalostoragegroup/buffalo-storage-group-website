@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use Buffalo Storage Group’s 3-D storage calculator to estimate your unit size and explore available storage locations.">
+  <title>Storage Calculator | Buffalo Storage Group</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css?v=32">
+  <link rel="stylesheet" href="calculator/styles.css">
+  <link rel="stylesheet" href="calculator/integration.css">
+  <script src="navigation.js" defer></script>
+  <script src="calculator/script.js" defer></script>
+</head>
+<body class="storage-calculator-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="index.html" aria-label="Buffalo Storage Group home">
+        <img class="brand-logo" src="images/buffalo-storage-group-logo-patriotic.png" alt="Buffalo Storage Group">
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-link" href="index.html#locations">Locations</a>
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="locations-menu" aria-label="Show Buffalo Storage Group locations">⌄</button>
+          <div class="nav-dropdown-menu" id="locations-menu">
+            <a href="https://www.534colvingarages.com/" target="_blank" rel="noopener">534 Colvin Garages</a>
+            <a href="https://www.colvinstorage.com/" target="_blank" rel="noopener">Colvin Storage</a>
+            <a href="https://www.amherstselfstorageny.com/" target="_blank" rel="noopener">Amherst Self Storage</a>
+            <a href="https://epicstoragewny.com/" target="_blank" rel="noopener">Epic Storage – Buffalo</a>
+            <a href="https://epicstoragewny.com/" target="_blank" rel="noopener">Epic Storage – Clarence Center</a>
+            <a href="https://www.northtonawandaselfstorage.com/" target="_blank" rel="noopener">North Tonawanda Self Storage</a>
+          </div>
+        </div>
+        <a class="storage-calculator-link" href="storage-calculator.html" aria-current="page">Storage Calculator</a>
+        <a href="index.html#about">About BSG</a>
+        <a href="index.html#contact">Contact BSG</a>
+      </nav>
+
+      <a class="button button-small" href="index.html#locations">Find a Location</a>
+    </div>
+  </header>
+  <main id="main-content">
+  <div class="bsg-calculator" id="bsg-storage-calculator" data-find-unit-url="index.html#locations">
+<div class="bsg-main">
+      <section class="bsg-intro" aria-labelledby="calculator-title">
+        <div><p class="bsg-eyebrow">Interactive storage guide</p><h1 id="calculator-title">Storage Calculator</h1></div>
+        <p>Add the items you plan to store. We’ll arrange them in the room and recommend a practical unit size with space to access your things.</p>
+      </section>
+
+      <section class="bsg-workspace" aria-label="Storage unit size calculator">
+        <aside class="bsg-inventory" aria-labelledby="inventory-title">
+          <div class="bsg-section-heading"><span class="bsg-step">1</span><div><p class="bsg-eyebrow">Build your inventory</p><h2 id="inventory-title">What are you storing?</h2></div></div>
+          <label class="bsg-search"><span class="bsg-sr-only">Search storage items</span><span aria-hidden="true">⌕</span><input id="itemSearch" type="search" placeholder="Search items" autocomplete="off"></label>
+          <div class="bsg-categories" id="categoryFilters" aria-label="Filter items by category"></div>
+          <p class="bsg-helper">Tap an item to add one.</p>
+          <div class="bsg-item-grid" id="itemGrid"></div>
+          <div class="bsg-selection-heading"><h3>Your items <span id="itemTotal">0</span></h3><button class="bsg-text-button" id="clearButton" type="button">Clear all</button></div>
+          <div class="bsg-selected-items" id="selectedItems" aria-live="polite"></div>
+        </aside>
+
+        <section class="bsg-visual" aria-labelledby="roomLabel">
+          <div class="bsg-visual-toolbar">
+            <div><p class="bsg-eyebrow">Live room preview</p><h2 id="roomLabel">5 × 10 ft unit</h2></div>
+            <div class="bsg-view-control" aria-label="3D room view controls"><button id="rotateLeft" type="button" aria-label="Rotate room left">↶</button><button id="resetView" type="button">Reset</button><button id="rotateRight" type="button" aria-label="Rotate room right">↷</button></div>
+          </div>
+          <div class="bsg-scene-wrap">
+            <div class="bsg-scene"><div class="bsg-room" id="room"><div class="bsg-wall bsg-wall-back"><span id="backWallLabel">5′ wide</span></div><div class="bsg-wall bsg-wall-left"><span>8′ high</span></div><div class="bsg-floor" id="roomFloor"><div class="bsg-floor-grid" aria-hidden="true"></div><div class="bsg-placed-items" id="placedItems"></div></div></div></div>
+            <div class="bsg-capacity-badge" aria-live="polite"><span id="capacityPercent">0%</span><small>estimated full</small></div>
+            <div class="bsg-room-legend"><i></i> 1 square ≈ 1 ft</div>
+          </div>
+          <div class="bsg-fit-status" id="fitStatus" aria-live="polite"></div>
+        </section>
+
+        <aside class="bsg-result" aria-labelledby="result-title">
+          <div class="bsg-section-heading"><span class="bsg-step">2</span><div><p class="bsg-eyebrow">Your result</p><h2 id="result-title">Best-fit unit</h2></div></div>
+          <div class="bsg-recommend-card">
+            <p>Recommended Unit</p><strong id="recommendedSize">5 × 10</strong><span id="recommendReason">A good fit for a few boxes and small items.</span>
+            <div class="bsg-meter" aria-hidden="true"><i id="meterFill"></i></div><small id="capacityText">0 of 400 cu. ft. used</small>
+            <button class="bsg-secondary-button" id="showRecommended" type="button">Show recommended room</button>
+          </div>
+          <div class="bsg-unit-picker"><p class="bsg-eyebrow">Compare room sizes</p><div id="unitButtons"></div></div>
+          <div class="bsg-unit-note"><span aria-hidden="true">⌂</span><p id="unitDescription"></p></div>
+          <a class="bsg-primary-cta" id="findUnitCta" href="index.html#locations">See Available Units <span aria-hidden="true">→</span></a>
+          <p class="bsg-disclaimer">This is an estimate. Exact fit depends on item dimensions and how you pack.</p>
+        </aside>
+      </section>
+    </div>
+
+    <div class="bsg-mobile-result"><span><small>Recommended Unit</small><strong id="mobileRecommendedSize">5 × 10</strong></span><a id="mobileFindUnitCta" href="index.html#locations">See Available Units</a></div>
+</div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <p class="footer-brand">Buffalo Storage Group</p>
+        <p>Parent company serving storage locations across Western New York</p>
+      </div>
+      <p>&copy; 2026 Buffalo Storage Group. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

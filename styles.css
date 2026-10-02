@@ -1147,3 +1147,14 @@ h3 {
     transition: none;
   }
 }
+
+/* Keep the calculator entry visible in the existing mobile navigation. */
+.main-nav:has(.storage-calculator-link) { flex-wrap: wrap; gap: 12px 24px; }
+.main-nav > .storage-calculator-link { display: inline-block; }
+@media (min-width: 861px) {
+  .header-content:has(.storage-calculator-link) .main-nav { flex: 1; justify-content: center; }
+}
+@media (max-width: 580px) {
+  .header-content:has(.storage-calculator-link) .brand,
+  .header-content:has(.storage-calculator-link) .brand-logo { max-width: 100%; }
+}

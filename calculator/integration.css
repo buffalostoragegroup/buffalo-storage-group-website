@@ -1,0 +1,14 @@
+/* Integration rules apply only to the dedicated calculator page. */
+.storage-calculator-page .bsg-calculator { min-height: 0; }
+.storage-calculator-page .bsg-calculator h2,
+.storage-calculator-page .bsg-calculator h3 { margin-top: 0; }
+.storage-calculator-page .main-nav [aria-current="page"] { color: var(--blue); }
+@media (min-width: 781px) and (max-width: 880px) {
+  .storage-calculator-page .bsg-workspace { grid-template-columns: minmax(0, 1fr); }
+  .storage-calculator-page .bsg-inventory { border-right: 0; }
+  .storage-calculator-page .bsg-result { display: block; }
+  .storage-calculator-page .bsg-recommend-card { margin: 22px 0; }
+}
+@media (max-width: 780px) {
+  .storage-calculator-page .site-footer { padding-bottom: 110px; }
+}
